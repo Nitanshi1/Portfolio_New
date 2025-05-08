@@ -1,0 +1,87 @@
+/* technologies.component.scss */
+.tech-section {
+    padding: 80px 0;
+    background: #1a1a2e; /* Dark blue background */
+    
+    .tech-stack {
+      display: grid;
+      gap: 40px;
+      margin-top: 40px;
+    }
+  
+    .tech-group {
+      .tech-group-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1rem;
+        color: #a1a1a1; /* Light gray for secondary text */
+        margin-bottom: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+  
+        .icon-accent {
+          color: #4cc9f0; /* Bright cyan accent color */
+          font-size: 1.2rem;
+        }
+      }
+    }
+  
+    .tech-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  
+    .tech-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+  
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        border-color: #4cc9f0; /* Accent color on hover */
+        background: rgba(76, 201, 240, 0.1); /* Light accent tint */
+      }
+    }
+  
+    .tech-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: grayscale(30%) brightness(1.2);
+      }
+    }
+  
+    .tech-name {
+      font-size: 0.95rem;
+      color: #ffffff; /* White primary text */
+      font-weight: 500;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .tech-items {
+      gap: 10px !important;
+    }
+  
+    .tech-item {
+      padding: 10px 15px !important;
+    }
+  }

@@ -1,0 +1,423 @@
+/* Ultra-Modern Dark Hero Section */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1a1a2e 0%, #0f0c29 100%);
+  padding: 0 2rem;
+  isolation: isolate;
+  
+  /* Cyberpunk grid overlay */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(rgba(76, 201, 240, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(76, 201, 240, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    opacity: 0.3;
+  }
+}
+
+/* Floating orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  animation: float 15s infinite ease-in-out;
+  
+  &-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(76, 201, 240, 0.3) 0%, transparent 70%);
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  
+  &-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(247, 37, 133, 0.2) 0%, transparent 70%);
+    bottom: 10%;
+    right: 15%;
+    animation-delay: 3s;
+  }
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero-text {
+  position: relative;
+  
+  .greeting {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #e6e6e6;
+    line-height: 1.2;
+    
+    .typed-text {
+      position: relative;
+      display: inline-block;
+      font-family: 'orbit', sans-serif;
+      font-size: 3rem;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #4cc9f0, #f72585);
+        transform-origin: left;
+        animation: typing 3.5s steps(30, end) infinite;
+      }
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      // background: #4cc9f0;
+      border-right: 3px solid #f72585; 
+      margin-left: 4px;
+      animation: blink 1s infinite;
+      vertical-align: middle;
+    }
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blinkCursor {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @keyframes underlineGlow {
+    0% {
+      transform: scaleX(0);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+  
+  .title.glitch {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    position: relative;
+    color: #a1a1a1;
+    font-family: 'orbit', sans-serif;
+    font-style: italic;
+    
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+    }
+    
+    &::before {
+      color: #ff1c82;
+      z-index: -1;
+      animation: glitch-effect 3s infinite;
+    }
+    
+    // &::after {
+    //   color: #87d5ec;
+    //   z-index: -2;
+    //   animation: glitch-effect 2s infinite reverse;
+    // }
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #a1a1a1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    
+    &-word {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+      
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          animation-delay: 0.2s * $i;
+        }
+      }
+    }
+  }
+}
+
+.holographic-btn {
+  position: relative;
+  padding: 1rem 2.5rem;
+  background: rgba(26, 26, 46, 0.5);
+  border: 1px solid rgba(76, 201, 240, 0.3);
+  color: #e6e6e6;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s;
+  z-index: 1;
+  
+  .btn-text {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .btn-hover {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(76, 201, 240, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.8s, opacity 0.8s;
+    pointer-events: none;
+    
+    &:first-child {
+      top: 20%;
+      left: 20%;
+    }
+    
+    &:last-child {
+      top: 80%;
+      left: 80%;
+    }
+  }
+  
+  &:hover {
+    box-shadow: 0 0 20px rgba(76, 201, 240, 0.3);
+    transform: translateY(-3px);
+    
+    .btn-hover {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.6;
+    }
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.model-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  
+  .model-canvas {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 30px rgba(76, 201, 240, 0.2));
+  }
+  
+  .model-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 40%, #1a1a2e 80%);
+    pointer-events: none;
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 3;
+  
+  .mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid #4cc9f0;
+    border-radius: 15px;
+    position: relative;
+    margin-bottom: 10px;
+    
+    .wheel {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 10px;
+      background: #4cc9f0;
+      border-radius: 2px;
+      animation: scroll-wheel 2s infinite;
+    }
+  }
+  
+  .arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .arrow {
+      width: 15px;
+      height: 15px;
+      border-right: 2px solid #4cc9f0;
+      border-bottom: 2px solid #4cc9f0;
+      transform: rotate(45deg);
+      margin: -5px;
+      animation: scroll-arrow 2s infinite;
+      
+      &:nth-child(1) { animation-delay: 0.1s; }
+      &:nth-child(2) { animation-delay: 0.2s; }
+      &:nth-child(3) { animation-delay: 0.3s; }
+    }
+  }
+}
+
+.tech-badges {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  
+  .badge {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    background: rgba(76, 201, 240, 0.1);
+    border: 1px solid rgba(76, 201, 240, 0.3);
+    border-radius: 50px;
+    color: #a1a1a1;
+    font-size: 0.8rem;
+    font-weight: 500;
+    animation: float-badge 15s infinite linear;
+    opacity: 0.7;
+    
+    &:hover {
+      background: rgba(76, 201, 240, 0.2);
+      color: #e6e6e6;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes glitch-effect {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, 3px); }
+  80% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-wheel {
+  0% { opacity: 0; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(15px); }
+}
+
+@keyframes scroll-arrow {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(45deg) translateY(10px); }
+}
+
+@keyframes float-badge {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); }
+  25% { transform: translateY(-50px) translateX(20px) rotate(5deg); }
+  50% { transform: translateY(-100px) translateX(0) rotate(0deg); }
+  75% { transform: translateY(-50px) translateX(-20px) rotate(-5deg); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg); }
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .model-container {
+    height: 300px;
+    order: -1;
+  }
+  
+  .tagline {
+    justify-content: center;
+  }
+  
+  .holographic-btn {
+    margin: 0 auto;
+  }
+}
+
+
+

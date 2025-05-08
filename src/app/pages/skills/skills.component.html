@@ -1,0 +1,60 @@
+<!-- technologies.component.html -->
+<section id="technologies" class="tech-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="title-decorator">//</span> Technologies</h2>
+        <div class="section-subtitle">My technical toolkit</div>
+      </div>
+  
+      <div class="tech-stack">
+        <!-- Languages & Frameworks -->
+        <div class="tech-group">
+          <h3 class="tech-group-title">
+            <i class="fas fa-code icon-accent"></i>
+            LANGUAGES & FRAMEWORKS
+          </h3>
+          <div class="tech-items">
+            <div class="tech-item" *ngFor="let item of languages">
+              <div class="tech-icon">
+                <img [src]="'assets/images/tech/' + item.icon + '.svg'" [alt]="item.name + ' icon'">
+              </div>
+              <span class="tech-name">{{item.name}}</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Databases -->
+        <div class="tech-group">
+          <h3 class="tech-group-title">
+            <i class="fas fa-database icon-accent"></i>
+            DATABASES
+          </h3>
+          <div class="tech-items">
+            <div class="tech-item" *ngFor="let item of databases">
+              <div class="tech-icon">
+                <img [src]="'assets/images/tech/' + item.icon + '.svg'" [alt]="item.name + ' icon'">
+              </div>
+              <span class="tech-name">{{item.name}}</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Tools -->
+        <div class="tech-group">
+          <h3 class="tech-group-title">
+            <i class="fas fa-tools icon-accent"></i>
+            TOOLS
+          </h3>
+          <div class="tech-items">
+            <div class="tech-item" *ngFor="let item of tools">
+              <div class="tech-icon">
+                <img [src]="'assets/images/tech/' + item.icon + '.svg'" [alt]="item.name + ' icon'">
+              </div>
+              <span class="tech-name">{{item.name}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <router-outlet></router-outlet>

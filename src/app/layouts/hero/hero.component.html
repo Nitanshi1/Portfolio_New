@@ -1,0 +1,59 @@
+<app-header></app-header>
+<section class="hero-section">
+  <!-- Animated background particles -->
+  <div class="particles" id="particles-js"></div>
+  
+  <!-- Glowing orb decoration -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  
+  <div class="hero-content">
+    <div class="hero-text">
+ 
+      <h1 class="greeting">
+        <span class="typed-text">{{typedText}}</span>
+        <span class="cursor">&nbsp;</span>
+      </h1>
+      
+     
+
+
+
+ <h2 class="title glitch"      data-text="Digital Experiences">{{title}}</h2>
+      
+      <p class="tagline">
+        <span class="tagline-word" *ngFor="let word of taglineWords">{{word}}</span>
+      </p>
+      
+
+      <button class="holographic-btn" (click)="scrollToContact()">
+        <span class="btn-text">Let's Connect</span>
+        <span class="btn-hover"></span>
+        <span class="btn-hover"></span>
+      </button>
+    </div>
+    
+    <div class="model-container">
+      <canvas #threejsCanvas class="model-canvas"></canvas>
+      <div class="model-overlay"></div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator" (click)="scrollToNextSection()">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+    <div class="arrows">
+      <span class="arrow"></span>
+      <span class="arrow"></span>
+      <span class="arrow"></span>
+    </div>
+  </div>
+  
+  <div class="tech-badges">
+    <div class="badge" *ngFor="let tech of floatingTech" [style.left.px]="tech.left" 
+         [style.top.px]="tech.top" [style.animationDelay.s]="tech.delay">
+      {{tech.name}}
+    </div>
+  </div>
+</section>

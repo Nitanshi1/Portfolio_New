@@ -1,0 +1,72 @@
+<!-- projects.component.html -->
+<div class="projects-container">
+  
+    <!-- Medical E-Commerce Card -->
+    <div class="project-card" id="medical-project">
+      <div class="project-content">
+        <div class="project-badge">Full Stack</div>
+        <h2><span class="icon-accent">💊</span> Medical E-Commerce</h2>
+        <p class="subtitle">MEAN Stack | JWT Auth | Real-Time Analytics</p>
+        <ul class="features">
+          <li><span class="icon-accent">▹</span> Role-based access control (Admin/Customer)</li>
+          <li><span class="icon-accent">▹</span> Dynamic product filtering & sorting</li>
+          <li><span class="icon-accent">▹</span> Secure checkout with order tracking</li>
+        </ul>
+        <div class="tech-stack">
+          <span *ngFor="let tech of medicalTech" class="tech-pill">
+            <span class="tech-icon">{{ getTechIcon(tech) }}</span>{{ tech }}
+          </span>
+        </div>
+        <div class="project-actions">
+          <a href="#" class="source-code-btn">Source Code</a>
+          <a href="#" class="demo-btn">Live Demo</a>
+        </div>
+      </div>
+      <div class="project-visual" #medicalVisual></div>
+    </div>
+  
+    <!-- Spotify Clone Card -->
+    <div class="project-card" id="spotify-project">
+      <div class="project-content">
+        <div class="project-badge">Frontend</div>
+        <h2><span class="icon-accent">🎵</span> Spotify Clone</h2>
+        <p class="subtitle">Angular 17 | Spotify API | OAuth</p>
+        <ul class="features">
+          <li><span class="icon-accent">▹</span> Spotify Web API integration</li>
+          <li><span class="icon-accent">▹</span> Custom audio waveform visualization</li>
+          <li><span class="icon-accent">▹</span> Playlist management</li>
+        </ul>
+        <div class="tech-stack">
+          <span *ngFor="let tech of spotifyTech" class="tech-pill">
+            <span class="tech-icon">{{ getTechIcon(tech) }}</span>{{ tech }}
+          </span>
+        </div>
+        <div class="project-actions">
+          <a href="#" class="source-code-btn">Source Code</a>
+        </div>
+      </div>
+      <div class="project-visual" #spotifyVisual></div>
+    </div>
+  
+    <!-- Voice Assistant Card -->
+    <div class="project-card" id="voice-project">
+      <div class="project-content">
+        <div class="project-badge">AI/ML</div>
+        <h2><span class="icon-accent">🗣️</span> NITS 2.0</h2>
+        <p class="subtitle">Python | NLP | Cross-Platform</p>
+        <ul class="features">
+          <li><span class="icon-accent">▹</span> Voice-controlled commands</li>
+          <li><span class="icon-accent">▹</span> Natural language processing</li>
+        </ul>
+        <div class="tech-stack">
+          <span *ngFor="let tech of voiceTech" class="tech-pill">
+            <span class="tech-icon">{{ getTechIcon(tech) }}</span>{{ tech }}
+          </span>
+        </div>
+        <div class="project-actions">
+          <a href="#" class="source-code-btn">Source Code</a>
+        </div>
+      </div>
+      <div class="project-visual" #voiceVisual></div>
+    </div>
+  </div>
