@@ -1,127 +1,125 @@
 <section id="about" class="about-section">
-    <!-- Animated background elements -->
-    <div class="cyber-grid-overlay"></div>
-    <div class="floating-orb orb-1"></div>
-    <div class="floating-orb orb-2"></div>
-    
-    <div class="container">
-      <!-- Section Header with Glitch Effect -->
-      <div class="section-header">
-        <h2 class="section-title glitch" data-text="About Matrix">About Matrix</h2>
-        <div class="section-subtitle">// My Digital Evolution</div>
-      </div>
-  
-      <div class="about-grid">
-        <!-- 3D Visual Column -->
-        <div class="visual-column">
-          <!-- Holographic 3D Container -->
-          <div class="holographic-display" id="about-3d-container">
-            <div class="holographic-overlay"></div>
-          </div>
-          
-          <!-- Cyberpunk Stats -->
-          <div class="cyber-stats">
-            <div class="stat-item" *ngFor="let stat of stats">
-              <div class="stat-value" [countUp]?="stat.value">{{stat.value}}</div>
-              <div class="stat-label">{{stat.label}}</div>
-              <div class="stat-bar">
-                <div class="stat-progress" [style.width.%]="stat.value * 10"></div>
-              </div>
-            </div>
+
+  <div class="cyber-grid-overlay"></div>
+  <div class="floating-orb orb-1"></div>
+  <div class="floating-orb orb-2"></div>
+  <div class="floating-orb orb-3"></div>
+
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title glitch" data-text="About">
+        About
+      </h2>
+      <!-- <div class="section-subtitle">// My_Digital_Evolution</div> -->
+      <div class="scanline"></div>
+    </div>
+
+    <div class="about-grid">
+      <!-- <div class="visual-column">
+        <div class="holographic-display" id="about-3d-container">
+          <div class="holographic-overlay"></div>
+          <div class="holographic-grid"></div>
+          <div class="loading-animation">
+            <div class="loading-bar"></div>
+            <div class="loading-text">INITIALIZING PROFILE...</div>
           </div>
         </div>
-  
-        <!-- Content Column -->
-        <div class="content-column">
-          <!-- Bio Card with Terminal Effect -->
-          <div class="cyber-card bio-card">
-            <div class="card-header">
-              <div class="card-dots">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
+
+       
+      </div> -->
+
+      <div class="content-column">
+        <div class="cyber-card bio-card">
+          <div class="card-header">
+            <div class="card-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <h3>whoami</h3>
+            <div class="card-corner"></div>
+          </div>
+          <div class="card-body">
+            <p class="typing-text">
+              <span class="prompt">></span> <span class="typing-line">I'm a <span class="highlight">Full Stack Developer</span> specializing in Angular and Node.js.</span><br />
+              <span class="prompt">></span> <span class="typing-line">My journey began in <span class="highlight">2020</span> at Hindustan College.</span><br />
+              <span class="prompt">></span> <span class="typing-line">Currently building digital experiences at <span class="highlight">Netsmartz</span>.</span><br />
+              <span class="prompt">></span> <span class="typing-line">Passionate about <span class="highlight">3D web</span> and <span class="highlight">AI integration</span>.</span>
+            </p>
+            <div class="signature">
+              <div class="pixel-line"></div>
+              <img src="assets/images/signature.png" alt="Signature" class="glow" />
+            </div>
+          </div>
+          <div class="card-corner bottom-right"></div>
+        </div>
+
+        <div class="timeline-accordion">
+          <div class="cyber-card timeline-card" [class.active]="activeAccordion === 'education'">
+            <div class="card-header" (click)="toggleAccordion('education')">
+              <div class="card-icon">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                </svg>
               </div>
-              <h3>whoami</h3>
+              <h3>Education.dat</h3>
+              <div class="card-arrow">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                </svg>
+              </div>
             </div>
             <div class="card-body">
-              <p class="typing-text">
-                <span class="prompt">></span> I'm a <span class="highlight">Full Stack Developer</span> specializing in Angular and Node.js.<br>
-                <span class="prompt">></span> My journey began in <span class="highlight">2020</span> at Hindustan College.<br>
-                <span class="prompt">></span> Currently building digital experiences at <span class="highlight">Netsmartz</span>.<br>
-                <span class="prompt">></span> Passionate about <span class="highlight">3D web</span> and <span class="highlight">AI integration</span>.
-              </p>
-              <div class="signature">
-                <div class="pixel-line"></div>
-                <img src="assets/images/signature.png" alt="Signature" class="glow">
+              <div class="timeline" *ngFor="let edu of education">
+                <div class="timeline-year">{{ edu.year }}</div>
+                <div class="timeline-content">
+                  <h4>{{ edu.degree }}</h4>
+                  <p class="institution">{{ edu.institution }}</p>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-line"></div>
+                </div>
               </div>
             </div>
           </div>
-  
-          <!-- Timeline Cards -->
-          <div class="timeline-accordion">
-            <!-- Education -->
-            <div class="cyber-card timeline-card" [class.active]="activeAccordion === 'education'">
-              <div class="card-header" (click)="toggleAccordion('education')">
-                <div class="card-icon">
-                  <svg class="icon" viewBox="0 0 24 24">
-                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
-                  </svg>
-                </div>
-                <h3>Education.dat</h3>
-                <div class="card-arrow">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-                  </svg>
-                </div>
+
+          <div class="cyber-card timeline-card" [class.active]="activeAccordion === 'experience'">
+            <div class="card-header" (click)="toggleAccordion('experience')">
+              <div class="card-icon">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99 .89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                </svg>
               </div>
-              <div class="card-body">
-                <div class="timeline" *ngFor="let edu of education">
-                  <div class="timeline-year">{{edu.year}}</div>
-                  <div class="timeline-content">
-                    <h4>{{edu.degree}}</h4>
-                    <p class="institution">{{edu.institution}}</p>
-                  </div>
-                </div>
+              <h3>Experience.exe</h3>
+              <div class="card-arrow">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                </svg>
               </div>
             </div>
-  
-            <!-- Experience -->
-            <div class="cyber-card timeline-card" [class.active]="activeAccordion === 'experience'">
-              <div class="card-header" (click)="toggleAccordion('experience')">
-                <div class="card-icon">
-                  <svg class="icon" viewBox="0 0 24 24">
-                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99 .89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
-                  </svg>
-                </div>
-                <h3>Experience.exe</h3>
-                <div class="card-arrow">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-                  </svg>
+            <div class="card-body">
+              <div class="timeline">
+                <div class="timeline-year">2024 - Present</div>
+                <div class="timeline-content">
+                  <h4>Jr. Software Engineer Netsmartz</h4>
+                  <ul class="cyber-list">
+                    <li> Built Angular dashboards for financial systems</li>
+                    <li>Optimized API response times by 40%</li>
+                    <li> Implemented role-based access control</li>
+                  </ul>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-line"></div>
                 </div>
               </div>
-              <div class="card-body">
-                <div class="timeline">
-                  <div class="timeline-year">2024 - Present</div>
-                  <div class="timeline-content">
-                    <h4>Jr. Software Engineer Netsmartz</h4>
-                    <ul class="cyber-list">
-                      <li>Built Angular dashboards for financial systems</li>
-                      <li>Optimized API response times by 40%</li>
-                      <li>Implemented role-based access control</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="timeline">
-                  <div class="timeline-year">2023 (3 mos)</div>
-                  <div class="timeline-content">
-                <h4>Web Dev Intern Agra Smart City</h4>
-                    <ul class="cyber-list">
-                      <li>Developed municipal PWA application</li>
-                      <li>Created interactive city maps</li>
-                      <li>Optimized for low-bandwidth users</li>
-                    </ul>
-                  </div>
+              <div class="timeline">
+                <div class="timeline-year">2023 (3 mos)</div>
+                <div class="timeline-content">
+                  <h4>Web Dev Intern Agra Smart City</h4>
+                  <ul class="cyber-list">
+                    <li>Developed municipal PWA application</li>
+                    <li> Created interactive city maps</li>
+                    <li> Optimized for low-bandwidth users</li>
+                  </ul>
+                  <div class="timeline-dot"></div>
                 </div>
               </div>
             </div>
@@ -129,7 +127,8 @@
         </div>
       </div>
     </div>
-  
-    <!-- Binary code animation at bottom -->
-    <div class="binary-rain"></div>
-  </section>
+  </div>
+
+  <div class="binary-rain"></div>
+  <div class="noise-overlay"></div>
+</section>

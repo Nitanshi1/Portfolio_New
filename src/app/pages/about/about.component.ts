@@ -11,16 +11,13 @@ import { OrbitControls } from 'three-stdlib';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent implements AfterViewInit, OnDestroy {
-toggleAccordion(arg0: string) {
-throw new Error('Method not implemented.');
-}
+
   private scene!: THREE.Scene;
   private camera!: THREE.PerspectiveCamera;
   private renderer!: THREE.WebGLRenderer;
   private controls!: OrbitControls;
   private animationId!: number;
 
-  // Stats Data
   stats = [
     { value: this.experienceYears, label: 'Years Experience' },
     { value: 10, label: 'Major Projects' },
@@ -129,5 +126,12 @@ activeAccordion: any;
     this.animationId = requestAnimationFrame(() => this.animate());
     this.controls?.update();
     this.renderer?.render(this.scene, this.camera);
+  }
+
+  //  activeAccordion: 'education' | 'experience' | null = null;
+
+  toggleAccordion(panel: 'education' | 'experience'): void {
+    // if the user clicks the already-open panel, close it; otherwise open the new one
+    this.activeAccordion = this.activeAccordion === panel ? null : panel;
   }
 }

@@ -1,60 +1,66 @@
-<!-- technologies.component.html -->
-<section id="technologies" class="tech-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title"><span class="title-decorator">//</span> Technologies</h2>
-        <div class="section-subtitle">My technical toolkit</div>
+<!-- skills.component.html -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <div class="section-header" @fadeIn>
+      <h2 class="section-title"><span class="title-decorator">//</span> Skills</h2>
+    </div>
+
+    <div class="skills-stack">
+      <div class="skills-group" @staggerIn>
+        <h3 class="skills-group-title">
+          <i class="fas fa-code icon-accent"></i>
+          Languages & Frameworks
+        </h3>
+        <div class="skills-items">
+          <div class="skills-item" *ngFor="let item of languages" @popIn>
+            <div class="skill-content">
+              <div class="skills-icon"><img class="skill-icon" [src]="item.icon" [alt]="item.name + ' icon'" />
+
+              </div>
+              <span class="skills-name">{{item.name}}</span>
+              <!-- <span class="skills-level {{getLevelClass(item.level)}}">{{item.level}}</span> -->
+            </div>
+          </div>
+        </div>
       </div>
-  
-      <div class="tech-stack">
-        <!-- Languages & Frameworks -->
-        <div class="tech-group">
-          <h3 class="tech-group-title">
-            <i class="fas fa-code icon-accent"></i>
-            LANGUAGES & FRAMEWORKS
-          </h3>
-          <div class="tech-items">
-            <div class="tech-item" *ngFor="let item of languages">
-              <div class="tech-icon">
-                <img [src]="'assets/images/tech/' + item.icon + '.svg'" [alt]="item.name + ' icon'">
+
+      <div class="skills-group" @staggerIn>
+        <h3 class="skills-group-title">
+          <i class="fas fa-database icon-accent"></i>
+          Databases
+        </h3>
+        <div class="skills-items">
+          <div class="skills-item" *ngFor="let item of databases" @popIn>
+            <div class="skill-content">
+              <div class="skills-icon">
+              <img class="skill-icon" [src]="item.icon" [alt]="item.name + ' icon'" />
+
               </div>
-              <span class="tech-name">{{item.name}}</span>
+              <span class="skills-name">{{item.name}}</span>
+              <!-- <span class="skills-level {{getLevelClass(item.level)}}">{{item.level}}</span> -->
             </div>
           </div>
         </div>
-  
-        <!-- Databases -->
-        <div class="tech-group">
-          <h3 class="tech-group-title">
-            <i class="fas fa-database icon-accent"></i>
-            DATABASES
-          </h3>
-          <div class="tech-items">
-            <div class="tech-item" *ngFor="let item of databases">
-              <div class="tech-icon">
-                <img [src]="'assets/images/tech/' + item.icon + '.svg'" [alt]="item.name + ' icon'">
+      </div>
+
+      <div class="skills-group" @staggerIn>
+        <h3 class="skills-group-title">
+          <i class="fas fa-tools icon-accent"></i>
+          Tools & Platforms
+        </h3>
+        <div class="skills-items">
+          <div class="skills-item" *ngFor="let item of tools" @popIn>
+            <div class="skill-content">
+              <div class="skills-icon">
+                <img class="skill-icon" [src]="item.icon" [alt]="item.name + ' icon'" />
+
               </div>
-              <span class="tech-name">{{item.name}}</span>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Tools -->
-        <div class="tech-group">
-          <h3 class="tech-group-title">
-            <i class="fas fa-tools icon-accent"></i>
-            TOOLS
-          </h3>
-          <div class="tech-items">
-            <div class="tech-item" *ngFor="let item of tools">
-              <div class="tech-icon">
-                <img [src]="'assets/images/tech/' + item.icon + '.svg'" [alt]="item.name + ' icon'">
-              </div>
-              <span class="tech-name">{{item.name}}</span>
+              <span class="skills-name">{{item.name}}</span>
+              <!-- <span class="skills-level {{getLevelClass(item.level)}}">{{item.level}}</span> -->
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <router-outlet></router-outlet>
+  </div>
+</section>
