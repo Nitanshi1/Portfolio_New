@@ -1,134 +1,160 @@
-<section id="about" class="about-section">
+   <section class="about-section">
+        <div class="cyber-grid-overlay"></div>
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
 
-  <div class="cyber-grid-overlay"></div>
-  <div class="floating-orb orb-1"></div>
-  <div class="floating-orb orb-2"></div>
-  <div class="floating-orb orb-3"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Behind the Scenes</h2>
+                <div class="section-divider"></div>
+            </div>
 
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title glitch" data-text="About">
-        About
-      </h2>
-      <!-- <div class="section-subtitle">// My_Digital_Evolution</div> -->
-      <div class="scanline"></div>
+            <div class="about-content">
+                <!-- Bio Card -->
+                <div class="cyber-card bio-card">
+                    <div class="card-header">
+                        <div class="card-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <h3>whoami</h3>
+                    </div>
+<div class="card-body">
+    <p class="typing-text">
+        <!-- <span class="prompt">></span> <span class="command">$ cat about_nitanshi.txt</span><br> -->
+        <span class="prompt">></span> <span class="highlight">Hi, I am a Nitanshi Agarwal</span> | Front-End Developer (Chandigarh, India)<br>
+        <span class="prompt">></span> I architect <span class="highlight">scalable web solutions</span> across domains - from <span class="highlight">financial systems</span> like Credit Limit Management platforms to <span class="highlight">AI chatbots</span>. My toolkit includes <span class="highlight">various Angular versions</span> for dynamic UIs, <span class="highlight">Node.js</span> for robust backends, and <span class="highlight">WebSockets</span> for real-time functionality. I thrive on implementing <span class="highlight">role-based systems</span> with precision and exploring <span class="highlight">3D web visualization</span> (Three.js) and <span class="highlight">AI integration</span> patterns.<br>
+                <span class="prompt">></span> Currently seeking opportunities to merge <span class="highlight">cutting-edge tech</span> with <span class="highlight">intuitive UX</span> for impactful digital experiences.
+    </p>
+    <div class="signature">
+        <div class="pixel-line"></div>
+        <div class="signature-code">
+            <span style="color: #38bdf8; font-family: 'Courier New', monospace;">
+                >_  Let's collaborate! 
+            </span>
+        </div>
     </div>
-
-    <div class="about-grid">
-      <!-- <div class="visual-column">
-        <div class="holographic-display" id="about-3d-container">
-          <div class="holographic-overlay"></div>
-          <div class="holographic-grid"></div>
-          <div class="loading-animation">
-            <div class="loading-bar"></div>
-            <div class="loading-text">INITIALIZING PROFILE...</div>
-          </div>
-        </div>
-
-       
-      </div> -->
-
-      <div class="content-column">
-        <div class="cyber-card bio-card">
-          <div class="card-header">
-            <div class="card-dots">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <h3>whoami</h3>
-            <div class="card-corner"></div>
-          </div>
-          <div class="card-body">
-            <p class="typing-text">
-              <span class="prompt">></span> <span class="typing-line">I'm a <span class="highlight">Full Stack Developer</span> specializing in Angular and Node.js.</span><br />
-              <span class="prompt">></span> <span class="typing-line">My journey began in <span class="highlight">2020</span> at Hindustan College.</span><br />
-              <span class="prompt">></span> <span class="typing-line">Currently building digital experiences at <span class="highlight">Netsmartz</span>.</span><br />
-              <span class="prompt">></span> <span class="typing-line">Passionate about <span class="highlight">3D web</span> and <span class="highlight">AI integration</span>.</span>
-            </p>
-            <div class="signature">
-              <div class="pixel-line"></div>
-              <img src="assets/images/signature.png" alt="Signature" class="glow" />
-            </div>
-          </div>
-          <div class="card-corner bottom-right"></div>
-        </div>
-
-        <div class="timeline-accordion">
-          <div class="cyber-card timeline-card" [class.active]="activeAccordion === 'education'">
-            <div class="card-header" (click)="toggleAccordion('education')">
-              <div class="card-icon">
-                <svg class="icon" viewBox="0 0 24 24">
-                  <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
-                </svg>
-              </div>
-              <h3>Education.dat</h3>
-              <div class="card-arrow">
-                <svg viewBox="0 0 24 24">
-                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-                </svg>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="timeline" *ngFor="let edu of education">
-                <div class="timeline-year">{{ edu.year }}</div>
-                <div class="timeline-content">
-                  <h4>{{ edu.degree }}</h4>
-                  <p class="institution">{{ edu.institution }}</p>
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-line"></div>
+</div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="cyber-card timeline-card" [class.active]="activeAccordion === 'experience'">
-            <div class="card-header" (click)="toggleAccordion('experience')">
-              <div class="card-icon">
-                <svg class="icon" viewBox="0 0 24 24">
-                  <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99 .89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
-                </svg>
-              </div>
-              <h3>Experience.exe</h3>
-              <div class="card-arrow">
-                <svg viewBox="0 0 24 24">
-                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-                </svg>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="timeline">
-                <div class="timeline-year">2024 - Present</div>
-                <div class="timeline-content">
-                  <h4>Jr. Software Engineer Netsmartz</h4>
-                  <ul class="cyber-list">
-                    <li> Built Angular dashboards for financial systems</li>
-                    <li>Optimized API response times by 40%</li>
-                    <li> Implemented role-based access control</li>
-                  </ul>
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-line"></div>
-                </div>
-              </div>
-              <div class="timeline">
-                <div class="timeline-year">2023 (3 mos)</div>
-                <div class="timeline-content">
-                  <h4>Web Dev Intern Agra Smart City</h4>
-                  <ul class="cyber-list">
-                    <li>Developed municipal PWA application</li>
-                    <li> Created interactive city maps</li>
-                    <li> Optimized for low-bandwidth users</li>
-                  </ul>
-                  <div class="timeline-dot"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+                <div class="timeline-accordion">
+                 
+                    <div class="cyber-card timeline-card" id="education-card">
+                        <div class="card-header" onclick="toggleAccordion('education')">
+                            <div class="card-icon">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                                </svg>
+                            </div>
+                            <h3>Education.dat</h3>
+                            <div class="card-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="timeline">
+                                <div class="timeline-year">2020 – 2024</div>
+                                <div class="timeline-content">
+                                    <h4>B.Tech in Computer Science & Engineering(83.98%)</h4>
+                                    <p class="institution">Hindustan College of Science and Technology, Mathura</p>
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-year">2017 – 2019</div>
+                                <div class="timeline-content">
+                                    <h4>Senior Secondary (CBSE – 80.20%)</h4>
+                                    <p class="institution">Holy Public School, Agra</p>
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-year">2015 – 2017</div>
+                                <div class="timeline-content">
+                                    <h4>Secondary (CBSE – 10 CGPA)</h4>
+                                    <p class="institution">Holy Public School, Agra</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Card -->
+                    <div class="cyber-card timeline-card" id="experience-card">
+                        <div class="card-header" onclick="toggleAccordion('experience')">
+                            <div class="card-icon">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99 .89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                                </svg>
+                            </div>
+                            <h3>Experience.exe</h3>
+                            <div class="card-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                                </svg>
+                            </div>
+                        </div>
+                       <div class="card-body">
+    <div class="timeline">
+        <div class="timeline-year">2024 - Present</div>
+        <div class="timeline-content">
+            <h4>Jr. Software Engineer - Netsmartz</h4>
+            <ul class="cyber-list">
+                <li>
+                    Developed <span class="highlight">financial dashboards</span> with 
+                    <span class="highlight">role-based access control</span> for credit management systems.
+                </li>
+                <li>
+                    Engineered real-time features using <span class="highlight">WebSockets</span> 
+                    for collaborative enterprise applications.
+                </li>
+                <li>
+                    Built <span class="highlight">AI-integrated portals</span> combining voice recognition, 
+                    conversational UI, and data visualization.
+                </li>
+                <li>
+                    Optimized <span class="highlight">API performance </span> through 
+                    query optimization and caching strategies.
+                </li>
+            <li>
+  Delivered<span class="highlight"> pixel-perfect, intuitive designs</span> that enhance user experience and visual consistency.
+</li>
+
+            </ul>
         </div>
-      </div>
     </div>
+<div class="timeline">
+  <div class="timeline-year">2023 (3 mos)</div>
+  <div class="timeline-content">
+    <h4>Web Dev Intern - Agra Smart City</h4>
+    <ul class="cyber-list">
+      <li>
+        Collaborated in a team to build a <span class="highlight">MERN stack web platform</span> centralizing detailed road infrastructure data across the city.
+      </li>
+      <li>
+        Designed <span class="highlight">responsive, user-centric interfaces</span> showcasing ward-wise road info, contractors, and contract timelines.
+      </li>
+      <li>
+        Integrated <span class="highlight">Progressive Web App (PWA) features</span> for offline access and enhanced usability.
+      </li>
+      <li>
+        Enabled users to view <span class="highlight">contractor details, tenure, expiry, and renewal</span> information interactively.
+      </li>
+    
+      <li>
+        Optimized the application for <span class="highlight">low-bandwidth environments</span>, ensuring accessibility for diverse user bases.
+      </li>
+    </ul>
   </div>
+</div>
 
-  <div class="binary-rain"></div>
-  <div class="noise-overlay"></div>
-</section>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="binary-rain"></div>
+        <div class="noise-overlay"></div>
+    </section>

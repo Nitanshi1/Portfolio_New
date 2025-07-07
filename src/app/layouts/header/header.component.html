@@ -1,51 +1,55 @@
 <header class="header" [ngClass]="{'scrolled': isScrolled}">
-    <!-- Animated background particles -->
-    <div class="header-particles"></div>
+  <div class="header-particles"></div>
+  
+  <div class="header-container">
+    <div class="logo" (click)="scrollToTop()">
+      <span class="logo-text">{{name}}</span>
+      <span class="logo-glow"></span>
+      <span class="logo-pulse"></span>
+    </div>
     
-    <div class="header-container">
-      <!-- Logo with animated gradient -->
-      <div class="logo" (click)="scrollToTop()">
-        <span class="logo-text">{{name}}</span>
-        <span class="logo-glow"></span>
-      </div>
-      
-      <!-- Desktop Navigation with advanced effects -->
-      <nav class="desktop-nav">
-        <ul class="nav-list">
-          <li class="nav-item" *ngFor="let item of navItems" [ngClass]="{'active': activeSection === item.id}">
-            <a (click)="scrollToSection(item.id)" class="nav-link">
-              <span class="link-text">{{item.label}}</span>
-              <span class="link-underline">
-                <span class="underline-wave"></span>
+    <nav class="desktop-nav">
+      <ul class="nav-list">
+        <li class="nav-item" *ngFor="let item of navItems" [ngClass]="{'active': activeSection === item.id}">
+          <a (click)="scrollToSection(item.id)" class="nav-link">
+            <span class="link-text">{{item.label}}</span>
+            <span class="link-underline">
+              <span class="underline-wave"></span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <button class="holographic-toggle" (click)="toggleMobileMenu()" [ngClass]="{'active': mobileMenuOpen}" aria-label="Menu">
+      <span class="holographic-line"></span>
+      <span class="holographic-line"></span>
+      <span class="holographic-line"></span>
+      <div class="holographic-glow"></div>
+    </button>
+  </div>
+  
+  <div class="mobile-nav" [ngClass]="{'active': mobileMenuOpen}">
+    <div class="mobile-nav-overlay">
+      <div class="mobile-nav-content">
+        <div class="mobile-nav-header">
+          <div class="mobile-logo">{{name}}</div>
+          <div class="mobile-nav-divider"></div>
+        </div>
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item" *ngFor="let item of navItems" [ngClass]="{'active': activeSection === item.id}">
+            <a (click)="scrollToSection(item.id); mobileMenuOpen = false" class="mobile-nav-link">
+              <span class="mobile-link-decor"></span>
+              <span class="mobile-link-text">{{item.label}}</span>
+              <span class="mobile-link-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4cc9f0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
               </span>
             </a>
           </li>
         </ul>
-      </nav>
-      
-      <!-- Holographic mobile toggle -->
-      <button class="holographic-toggle" (click)="toggleMobileMenu()" [ngClass]="{'active': mobileMenuOpen}" aria-label="Menu">
-        <span class="holographic-line"></span>
-        <span class="holographic-line"></span>
-        <span class="holographic-line"></span>
-        <div class="holographic-glow"></div>
-      </button>
-    </div>
-    
-    <!-- Futuristic mobile menu -->
-    <div class="mobile-nav" [ngClass]="{'active': mobileMenuOpen}">
-      <div class="mobile-nav-overlay">
-        <div class="mobile-nav-content">
-          <ul class="mobile-nav-list">
-            <li class="mobile-nav-item" *ngFor="let item of navItems" [ngClass]="{'active': activeSection === item.id}">
-              <a (click)="scrollToSection(item.id); mobileMenuOpen = false" class="mobile-nav-link">
-                <span class="mobile-link-decor"></span>
-                <span class="mobile-link-text">{{item.label}}</span>
-                <span class="mobile-link-arrow">→</span>
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>

@@ -1,10 +1,14 @@
-/* projects.component.scss */
-.projects-container {
-  padding: 5rem 2rem;
+.project-section {
+  padding: 80px 0;
   background: #1a1a2e;
-  min-height: 100vh;
+  color: white;
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 }
-
 .project-card {
   display: flex;
   background: rgba(26, 26, 46, 0.7);
@@ -198,3 +202,266 @@
     opacity: 0;
   }
 }
+
+
+
+
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 10px;
+      position: relative;
+      
+      .title-decorator {
+        color: #4cc9f0;
+        margin-right: 12px;
+        font-weight: 400;
+      }
+      
+      .title-text {
+        position: relative;
+        z-index: 1;
+        padding: 0 15px;
+        background: #1a1a2e;
+         color: #4cc9f0;
+      }
+      
+      .title-line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(76, 201, 240, 0.5), transparent);
+        z-index: 0;
+      }
+    }
+    
+    .section-subtitle {
+      color: #94a3b8;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 60px 0;
+    
+    .section-header {
+      margin-bottom: 30px;
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+/* projects.component.scss */
+.projects-container {
+  padding: 3rem 1.5rem; /* More compact container padding */
+  background: #1a1a2e;
+  min-height: 100vh;
+}
+
+.project-card {
+  display: flex;
+  background: rgba(26, 26, 46, 0.7);
+  border-radius: 10px; /* Slightly smaller radius */
+  padding: 1.5rem; /* More compact padding */
+  margin-bottom: 1.5rem; /* Reduced spacing between cards */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Smaller shadow */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease; /* Faster transition */
+  max-width: 1000px; /* More narrow max-width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-card::before {
+  width: 3px; /* Thinner accent line */
+}
+
+.project-card:hover {
+  transform: translateY(-3px); /* More subtle hover lift */
+  box-shadow: 0 10px 25px rgba(76, 201, 240, 0.15); /* Smaller hover shadow */
+}
+
+.project-badge {
+  top: 15px; /* Adjusted position */
+  right: 15px;
+  padding: 0.2rem 0.6rem; /* More compact */
+  font-size: 0.7rem; /* Smaller text */
+}
+
+.project-content {
+  padding-right: 1.5rem; /* Reduced spacing */
+}
+
+.project-card h2 {
+  font-size: 1.5rem; /* Smaller heading */
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  margin-bottom: 1.2rem; /* Reduced spacing */
+  font-size: 0.9rem; /* Smaller text */
+}
+
+.features li {
+  margin-bottom: 0.5rem; /* Tighter list */
+  font-size: 0.85rem; /* Smaller text */
+}
+
+.tech-stack {
+  margin: 1rem 0; /* Reduced spacing */
+  gap: 0.8rem; /* Tighter gap */
+}
+
+.tech-pill {
+  padding: 0.3rem 0.7rem; /* More compact */
+  font-size: 0.8rem; /* Smaller text */
+}
+
+.project-actions {
+  gap: 0.7rem; /* Tighter button spacing */
+}
+
+.source-code-btn, .demo-btn {
+  padding: 0.6rem 1.2rem; /* More compact buttons */
+  font-size: 0.85rem; /* Smaller button text */
+}
+
+.project-visual {
+  min-height: 200px; /* More compact visual area */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .project-card {
+    padding: 1.2rem;
+  }
+  
+  .project-content {
+    margin-bottom: 1rem;
+  }
+  
+  .project-visual {
+    min-height: 150px;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-container {
+    padding: 2rem 1rem;
+  }
+  
+  .project-card {
+    padding: 1rem;
+  }
+  
+  .project-card h2 {
+    font-size: 1.3rem;
+  }
+  
+  .project-actions {
+    flex-direction: row; /* Keep buttons in row on mobile */
+    flex-wrap: wrap;
+  }
+  
+  .source-code-btn, .demo-btn {
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+  .section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+  
+      &.glitch {
+        animation: glitch-skew 1s infinite linear alternate-reverse;
+        
+        &::before, &::after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, #38bdf8, #818cf8);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+        
+        &::before {
+          left: 2px;
+          text-shadow: -2px 0 #f72585;
+          clip: rect(44px, 450px, 56px, 0);
+          animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        &::after {
+          left: -2px;
+          text-shadow: -2px 0 #4cc9f0;
+          clip: rect(44px, 450px, 56px, 0);
+          animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+      }
+    }
+  
+    .section-subtitle {
+      color: #94a3b8;
+      font-family: 'Courier New', monospace;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+    }
+        .section-divider {
+            width: 80px;
+            height: 3px;
+               background: linear-gradient(to right, #4cc9f0, #f72585);
+            margin: 0 auto 1rem;
+        }
+
+  }

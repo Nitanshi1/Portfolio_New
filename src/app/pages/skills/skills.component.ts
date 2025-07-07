@@ -71,6 +71,8 @@ export class SkillsComponent {
     { name: 'ExpressJS', icon: 'assets/expressjs.jpg' },
     { name: 'Bootstrap', icon: 'assets/bootstrap.jpg' },
     { name: 'Tailwind CSS', icon: 'assets/tailwindcss.jpg' },
+    { name: 'Angular Material', icon: 'assets/angular mat.png' },
+    
   ];
 
   databases = [

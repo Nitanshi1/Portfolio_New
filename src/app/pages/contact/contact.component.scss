@@ -1,7 +1,7 @@
 /* Contact Section - Dark Theme */
 .contact-section {
     background: #1a1a2e;
-    padding: 6rem 2rem;
+    padding: 5rem 2rem;
     color: white;
   }
   
@@ -10,26 +10,26 @@
     margin: 0 auto;
   }
   
-  .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 4rem;
-    position: relative;
+  // .section-title {
+  //   font-size: 2.5rem;
+  //   text-align: center;
+  //   margin-bottom: 4rem;
+  //   position: relative;
     
-    .icon-accent {
-      color: #4cc9f0;
-      margin-right: 15px;
-    }
+  //   .icon-accent {
+  //     color: #4cc9f0;
+  //     margin-right: 15px;
+  //   }
     
-    &::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(to right, #4cc9f0, #f72585);
-      margin: 1rem auto 0;
-    }
-  }
+  //   &::after {
+  //     content: '';
+  //     display: block;
+  //     width: 80px;
+  //     height: 4px;
+  //     background: linear-gradient(to right, #4cc9f0, #f72585);
+  //     margin: 1rem auto 0;
+  //   }
+  // }
   
   .contact-content {
     display: grid;
@@ -195,7 +195,7 @@
     align-items: center;
     gap: 10px;
     padding: 1rem 2rem;
-    background: linear-gradient(45deg, #4cc9f0, #4895ef);
+   background: linear-gradient(to right, #4cc9f0, #5350e7);
     color: #1a1a2e;
     border: none;
     border-radius: 50px;
@@ -219,4 +219,198 @@
       height: 20px;
       transition: all 0.3s ease;
     }
+  }
+
+
+.container {
+  max-width: 1000px; /* Reduced from 1200px */
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem; /* Reduced from 2.5rem */
+  margin-bottom: 2.5rem; /* Reduced from 4rem */
+  
+  .icon-accent {
+    margin-right: 10px; /* Reduced from 15px */
+  }
+  
+  &::after {
+    width: 60px; /* Reduced from 80px */
+    height: 3px; /* Reduced from 4px */
+    margin: 0.8rem auto 0; /* Reduced from 1rem */
+  }
+}
+
+.contact-content {
+  gap: 2.5rem; /* Reduced from 4rem */
+}
+
+/* Left Side - Contact Info */
+.contact-info {
+  h3 {
+    font-size: 1.5rem; /* Reduced from 1.8rem */
+    margin-bottom: 1rem; /* Reduced from 1.5rem */
+  }
+  
+  .contact-subtext {
+    margin-bottom: 2rem; /* Reduced from 2.5rem */
+    font-size: 1rem; /* Reduced from 1.1rem */
+  }
+}
+
+.contact-methods {
+  gap: 1.2rem; /* Reduced from 1.5rem */
+  margin-bottom: 2rem; /* Reduced from 3rem */
+}
+
+.contact-item {
+  gap: 0.8rem; /* Reduced from 1rem */
+  
+  span {
+    font-size: 1rem; /* Reduced from 1.1rem */
+  }
+}
+
+.contact-icon {
+  width: 36px; /* Reduced from 40px */
+  height: 36px;
+  
+  svg {
+    width: 20px; /* Reduced from 24px */
+    height: 20px;
+  }
+}
+
+.social-icons {
+  gap: 1.2rem; /* Reduced from 1.5rem */
+}
+
+.social-icon svg {
+  width: 24px; /* Reduced from 28px */
+  height: 24px;
+}
+
+/* Right Side - Contact Form */
+.dark-form {
+  .form-group {
+    margin-bottom: 1.5rem; /* Reduced from 2rem */
+  }
+  
+  .form-input {
+    padding: 0.8rem 0; /* Reduced from 1rem */
+  }
+}
+
+.submit-btn {
+  padding: 0.8rem 1.5rem; /* Reduced from 1rem 2rem */
+  font-size: 0.9rem; /* Reduced from 1rem */
+  
+  svg {
+    width: 18px; /* Reduced from 20px */
+    height: 18px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 1rem; /* More compact on mobile */
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-content {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 2.5rem 1rem;
+  }
+  
+  .contact-item {
+    gap: 0.6rem;
+  }
+  
+  .contact-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+
+
+
+
+  .section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+  
+      &.glitch {
+        animation: glitch-skew 1s infinite linear alternate-reverse;
+        
+        &::before, &::after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, #38bdf8, #818cf8);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+        
+        &::before {
+          left: 2px;
+          text-shadow: -2px 0 #f72585;
+          clip: rect(44px, 450px, 56px, 0);
+          animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        &::after {
+          left: -2px;
+          text-shadow: -2px 0 #4cc9f0;
+          clip: rect(44px, 450px, 56px, 0);
+          animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+      }
+            
+    }
+  
+    .section-subtitle {
+      color: #94a3b8;
+      font-family: 'Courier New', monospace;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+    }
+        .section-divider {
+            width: 80px;
+            height: 3px;
+              background: linear-gradient(to right, #4cc9f0, #f72585);
+            margin: 0 auto 1rem;
+        }
+
   }

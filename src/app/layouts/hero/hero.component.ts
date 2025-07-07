@@ -158,6 +158,8 @@ export class HeroComponent {
   }
 
   scrollToContact(): void {
-    this.router.navigateByUrl('/contact');
+    // this.router.navigate['contact'];
+    console.log("dhuh");
+    
   }
 }

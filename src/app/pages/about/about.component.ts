@@ -42,7 +42,13 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
       institution: 'Holy Public School, Agra'
     }
   ];
-activeAccordion: any;
+
+    activeAccordion: string | null = null;
+    
+    constructor() {
+        // Bind the function to make it accessible
+        (window as any).toggleAccordion = this.toggleAccordion.bind(this);
+    }
 
   get experienceYears(): number {
     return new Date().getFullYear() - 2023; // You began working in Feb 2024
@@ -130,8 +136,24 @@ activeAccordion: any;
 
   //  activeAccordion: 'education' | 'experience' | null = null;
 
-  toggleAccordion(panel: 'education' | 'experience'): void {
-    // if the user clicks the already-open panel, close it; otherwise open the new one
+toggleAccordion(panel: 'education' | 'experience'): void {
+    // If the user clicks the already-open panel, close it; otherwise open the new one
     this.activeAccordion = this.activeAccordion === panel ? null : panel;
-  }
+    
+    const card = document.getElementById(panel + '-card');
+    
+    // If clicking the same panel, close it
+    if (this.activeAccordion === null) {
+        card?.classList.remove('active');
+    } else {
+        // Close any previously open panel
+        const prevPanel = this.activeAccordion === 'education' ? 'experience' : 'education';
+        const prevCard = document.getElementById(prevPanel + '-card');
+        prevCard?.classList.remove('active');
+        
+        // Open the new panel
+        card?.classList.add('active');
+    }
+}
+  
 }
